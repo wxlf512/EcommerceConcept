@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ecommerce Concept</string>
+    <string name="splash_circle_content_description">Splash circle</string>
 </resources>

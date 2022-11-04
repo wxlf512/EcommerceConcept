@@ -1,0 +1,5 @@
+<resources>
+    <string name="explorer_fragment">Explorer fragment</string>
+    <string name="city">City</string>
+    <string name="city_selection">City selection</string>
+</resources>

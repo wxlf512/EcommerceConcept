@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_explorer"
+    app:startDestination="@id/explorerFragment">
+
+    <fragment
+        android:id="@+id/explorerFragment"
+        android:name="dev.wxlf.feature.explorer.presentation.ExplorerFragment"
+        android:label="ExplorerFragment" >
+        <action
+        android:id="@+id/action_explorerFragment_self"
+        app:destination="@id/explorerFragment" />
+
+        <deepLink app:uri="ecommerceapp://explorer" />
+
+    </fragment>
+</navigation>
