@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomNavView"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_nav_bar_height"
+    android:gravity="center_vertical"
+    android:background="@drawable/bottom_nav_background"
+    android:paddingStart="@dimen/bottom_nav_bar_padding"
+    android:paddingEnd="@dimen/bottom_nav_bar_padding">
+
+
+    <ImageView
+        android:id="@+id/explorerIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/explorer_bottom_nav_icon"
+        android:contentDescription="@string/explorer"
+        android:layout_marginStart="@dimen/bottom_nav_bar_explorer_icon_margin_start"
+        android:layout_marginEnd="@dimen/bottom_nav_bar_explorer_icon_margin_end"/>
+
+    <TextView
+        android:id="@+id/explorerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explorer"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:layout_marginEnd="@dimen/bottom_nav_bar_explorer_label_margin_end"
+        tools:targetApi="p" />
+
+    <ImageView
+        android:id="@+id/cartIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cart_bottom_nav_icon"
+        android:contentDescription="@string/cart"
+        android:layout_marginStart="@dimen/bottom_nav_bar_padding"
+        android:layout_marginEnd="@dimen/bottom_nav_bar_padding"/>
+
+    <ImageView
+        android:id="@+id/favoritesIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/favorites_bottom_nav_icon"
+        android:contentDescription="@string/favorites"
+        android:layout_marginStart="@dimen/bottom_nav_bar_padding"
+        android:layout_marginEnd="@dimen/bottom_nav_bar_padding" />
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/profile_bottom_nav_icon"
+        android:contentDescription="@string/profile"
+        android:layout_marginStart="@dimen/bottom_nav_bar_padding"
+        android:layout_marginEnd="@dimen/bottom_nav_bar_padding" />
+</LinearLayout>

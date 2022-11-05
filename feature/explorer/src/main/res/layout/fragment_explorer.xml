@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,18 +9,31 @@
         android:id="@+id/explorerToolBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:contentInsetStart="0dp" >
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <ImageView
+                android:id="@+id/filterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="@string/city_selection"
+                android:layout_marginEnd="@dimen/filter_button_margin"
+                app:srcCompat="@drawable/filter"
+                tools:ignore="ImageContrastCheck" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:gravity="center" >
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
                 <ImageView
@@ -30,15 +43,15 @@
                     app:srcCompat="@drawable/gps"
                     tools:ignore="ImageContrastCheck" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/cityTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city"
-                    android:textSize="15sp"
-                    android:textFontWeight="500"
                     android:paddingStart="11dp"
                     android:paddingEnd="8dp"
+                    android:text="@string/city"
+                    android:textFontWeight="500"
+                    android:textSize="15sp"
                     tools:targetApi="p" />
 
                 <ImageView
@@ -49,26 +62,25 @@
                     app:srcCompat="@drawable/dropdown"
                     tools:ignore="ImageContrastCheck" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <ImageView
-                android:id="@+id/filterButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:paddingEnd="35dp"
-                android:contentDescription="@string/city_selection"
-                app:srcCompat="@drawable/filter" />
+            </LinearLayout>
 
         </FrameLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/detailsButton"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/bottomBarFrame"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Details" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
 
-</FrameLayout>
+        <include
+            android:id="@id/bottomNavView"
+            layout="@layout/bottom_nav_bar" />
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

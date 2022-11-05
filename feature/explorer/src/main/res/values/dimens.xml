@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_corner_radius">30dp</dimen>
+    <dimen name="bottom_nav_bar_height">72dp</dimen>
+    <dimen name="bottom_nav_bar_padding">27dp</dimen>
+    <dimen name="bottom_nav_bar_explorer_icon_margin_end">7dp</dimen>
+    <dimen name="bottom_nav_bar_explorer_icon_margin_start">41dp</dimen>
+    <dimen name="bottom_nav_bar_explorer_label_margin_end">20dp</dimen>
+    <dimen name="filter_button_margin">35dp</dimen>
+</resources>

@@ -4,11 +4,17 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import android.view.ViewTreeObserver
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
 import dev.wxlf.feature.explorer.R
 
+@ExperimentalBadgeUtils
 class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +25,22 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.detailsButton).setOnClickListener {
-            findNavController().navigate(Uri.parse("ecommerceapp://details"))
+        val bottomNavBar = view.findViewById<LinearLayout>(R.id.bottomNavView)
+        val cartIcon = bottomNavBar.findViewById<ImageView>(R.id.cartIcon)
+        cartIcon.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                BadgeDrawable.create(requireContext()).apply {
+                    number = 2
+                    this.backgroundColor = requireContext().getColor(R.color.orange)
+                    BadgeUtils.attachBadgeDrawable(this, cartIcon)
+                }
+                view.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            }
+        })
+
+        cartIcon.setOnClickListener {
+            findNavController().navigate(Uri.parse("ecommerceapp://cart"))
         }
     }
 }
