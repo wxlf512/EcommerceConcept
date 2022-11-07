@@ -10,10 +10,13 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/background_white</item>
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/purple</item>
         <item name="fontFamily">@font/mark_pro</item>
+
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 </resources>

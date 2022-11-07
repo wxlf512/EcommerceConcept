@@ -1,7 +1,7 @@
 package dev.wxlf.ecommerceconcept.screens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dev.wxlf.ecommerceconcept.R
 
 class MainActivity : AppCompatActivity() {

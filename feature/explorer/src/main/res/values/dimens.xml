@@ -2,12 +2,12 @@
 <resources>
     <dimen name="bottom_navigation_corner_radius">30dp</dimen>
     <dimen name="bottom_nav_bar_height">72dp</dimen>
-    <dimen name="bottom_nav_bar_padding">27dp</dimen>
+    <dimen name="bottom_nav_bar_padding">17dp</dimen>
     <dimen name="bottom_nav_bar_explorer_icon_margin_end">7dp</dimen>
     <dimen name="bottom_nav_bar_explorer_icon_margin_start">41dp</dimen>
     <dimen name="bottom_nav_bar_explorer_label_margin_end">20dp</dimen>
 
-    <dimen name="filter_button_margin">35dp</dimen>
+    <dimen name="filter_button_margin">25dp</dimen>
     <dimen name="topbar_height">50dp</dimen>
 
     <dimen name="title_list_item_height">48dp</dimen>
@@ -76,6 +76,24 @@
     <dimen name="best_seller_favorite_button_radius">25dp</dimen>
     <dimen name="best_seller_margin_bottom">12dp</dimen>
     <dimen name="best_seller_favorite_button_elevation">8dp</dimen>
+
+    <dimen name="filter_layout_height">375dp</dimen>
+    <dimen name="filter_layout_full_height">395dp</dimen>
+    <dimen name="filter_layout_padding_start">44dp</dimen>
+    <dimen name="filter_layout_padding_top">24dp</dimen>
+    <dimen name="filter_layout_padding_right">20dp</dimen>
+    <dimen name="button_corners_radius">10dp</dimen>
+    <dimen name="filter_elements_height">37dp</dimen>
+    <dimen name="filter_done_button_width">86dp</dimen>
+    <dimen name="filter_text_size">18sp</dimen>
+    <dimen name="filter_spinner_border">1dp</dimen>
+    <dimen name="filter_spinner_corner_radius">5dp</dimen>
+    <dimen name="filter_spinner_width">337dp</dimen>
+    <dimen name="filter_spinner_label_margin_bottom">10dp</dimen>
+    <dimen name="filter_spinners_margin_top">40dp</dimen>
+    <dimen name="filter_spinner_label_margin_top">15dp</dimen>
+    <dimen name="icon_buttons_padding">10dp</dimen>
+    <dimen name="filter_corners_radius">30dp</dimen>
 
 
 </resources>

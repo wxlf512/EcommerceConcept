@@ -11,9 +11,9 @@ import dev.wxlf.ecommerceconcept.R
 class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         requireActivity().window.statusBarColor = requireActivity().getColor(R.color.purple)
+        requireActivity().window.navigationBarColor = requireContext().getColor(R.color.purple)
+        super.onViewCreated(view, savedInstanceState)
         view.postDelayed({
             findNavController().navigate(Uri.parse("ecommerceapp://explorer"),
             navOptions {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/filter_spinner_corner_radius" />
+                    <stroke android:width="@dimen/filter_spinner_border"
+                        android:color="@color/filter_spinner_border" />
+                </shape>
+            </item>
+
+            <item
+                android:bottom="12dp"
+                android:drawable="@drawable/filter_spinner_icon"
+                android:end="20dp"
+                android:gravity="end"
+                android:top="17dp" />
+        </layer-list>
+    </item>
+
+</selector>

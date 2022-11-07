@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filterLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/filter_layout_height"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/filter_layout_padding_start"
+
+    android:paddingRight="@dimen/filter_layout_padding_right"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/filter_layout_padding_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/closeFilterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/close_filter_button_background"
+                android:contentDescription="@string/close_filter"
+                app:srcCompat="@drawable/close_filter_icon"
+                tools:ignore="TouchTargetSizeCheck" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/filter_options"
+            android:textFontWeight="500"
+            android:textSize="@dimen/filter_text_size"
+            tools:targetApi="p" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/doneFilterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/done_filter_button_background"
+                android:gravity="center"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="@dimen/filter_text_size"
+                tools:ignore="TextContrastCheck"
+                tools:targetApi="p" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/filter_spinners_margin_top"
+        android:layout_marginBottom="@dimen/filter_spinner_label_margin_bottom"
+        android:text="@string/brand"
+        android:textFontWeight="500"
+        android:textSize="@dimen/filter_text_size"
+        tools:ignore="TextContrastCheck"
+        tools:targetApi="p" />
+
+    <Spinner
+        android:id="@+id/brandSpinner"
+        android:layout_width="@dimen/filter_spinner_width"
+        android:layout_height="@dimen/filter_elements_height"
+        android:background="@drawable/filter_spinner_background"
+        android:contentDescription="@string/brand"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/filter_spinner_label_margin_top"
+        android:layout_marginBottom="@dimen/filter_spinner_label_margin_bottom"
+        android:text="@string/price"
+        android:textFontWeight="500"
+        android:textSize="@dimen/filter_text_size"
+        tools:ignore="TextContrastCheck"
+        tools:targetApi="p" />
+
+    <Spinner
+        android:id="@+id/priceSpinner"
+        android:layout_width="@dimen/filter_spinner_width"
+        android:layout_height="@dimen/filter_elements_height"
+        android:background="@drawable/filter_spinner_background"
+        android:contentDescription="@string/price"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/filter_spinner_label_margin_top"
+        android:layout_marginBottom="@dimen/filter_spinner_label_margin_bottom"
+        android:text="@string/size"
+        android:textFontWeight="500"
+        android:textSize="@dimen/filter_text_size"
+        tools:ignore="TextContrastCheck"
+        tools:targetApi="p" />
+
+    <Spinner
+        android:id="@+id/sizeSpinner"
+        android:layout_width="@dimen/filter_spinner_width"
+        android:layout_height="@dimen/filter_elements_height"
+        android:background="@drawable/filter_spinner_background"
+        android:contentDescription="@string/size"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</LinearLayout>

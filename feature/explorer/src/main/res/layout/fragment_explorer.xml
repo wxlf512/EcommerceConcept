@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_white">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/explorerToolBar"
         android:layout_width="match_parent"
@@ -26,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginEnd="@dimen/filter_button_margin"
+                android:padding="@dimen/icon_buttons_padding"
                 android:contentDescription="@string/city_selection"
                 app:srcCompat="@drawable/filter"
                 tools:ignore="ImageContrastCheck" />
@@ -105,5 +107,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:indeterminateTint="@color/orange"/>
+
+    <FrameLayout
+        android:id="@+id/aaa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

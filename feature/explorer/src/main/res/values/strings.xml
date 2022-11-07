@@ -29,5 +29,11 @@
     <string name="placeholder_cost">$9,999</string>
     <string name="placeholder_cost_without_discount"><strike>$9,999</strike></string>
     <string name="favorite_button">Favorite button</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="close_filter">Close filter</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
 
 </resources>

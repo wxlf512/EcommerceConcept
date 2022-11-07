@@ -4,9 +4,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ProgressBar
+import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -17,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.badge.ExperimentalBadgeUtils
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.android.support.AndroidSupportInjection
 import dev.wxlf.feature.explorer.R
 import dev.wxlf.feature.explorer.helpers.injectViewModel
@@ -28,6 +27,7 @@ import dev.wxlf.feature.explorer.presentation.adapters.items.TitleListItem
 import dev.wxlf.feature.explorer.presentation.models.ExplorerEvent
 import dev.wxlf.feature.explorer.presentation.models.ExplorerViewState
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 @ExperimentalBadgeUtils
 class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
@@ -41,10 +41,13 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
     private lateinit var cartIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        requireActivity().window.statusBarColor = requireContext().getColor(R.color.background_white)
+        requireActivity().window.statusBarColor =
+            requireContext().getColor(R.color.background_white)
         requireActivity().window.navigationBarColor = requireContext().getColor(R.color.purple)
         AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,6 +74,8 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
                         override fun onGlobalLayout() {
                             BadgeDrawable.create(requireContext()).apply {
                                 number = viewState.goodsCount
+                                horizontalOffset = (10 * density).roundToInt()
+                                verticalOffset = (10 * density).roundToInt()
                                 this.backgroundColor = requireContext().getColor(R.color.orange)
                                 BadgeUtils.attachBadgeDrawable(this, cartIcon)
                             }
@@ -88,6 +93,37 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
         if (!dataLoaded) {
             dataLoaded = true
             viewModel.obtainEvent(ExplorerEvent.ScreenShown)
+        }
+
+        /*************** Filter ***************/
+        val filterBottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialog)
+        with(filterBottomSheetDialog) {
+            setContentView(R.layout.filter_bottom_sheet_layout)
+
+            findViewById<Spinner>(R.id.brandSpinner)?.adapter =
+                createSpinnerAdapter(listOf("Samsung", "Xiaomi", "Apple", "Huawei"))
+            findViewById<Spinner>(R.id.priceSpinner)?.adapter =
+                createSpinnerAdapter(
+                    listOf(
+                        "$300 - $500",
+                        "$501 - $1000",
+                        "$1001 - $1500",
+                        "$1501 - $2000"
+                    )
+                )
+            findViewById<Spinner>(R.id.sizeSpinner)?.adapter =
+                createSpinnerAdapter(listOf("4.5 to 5.5 inches", "5.5 to 6.5 inches", "6.5 to 7 inches"))
+
+            findViewById<ImageButton>(R.id.closeFilterButton)?.setOnClickListener {
+                dismiss()
+            }
+            findViewById<TextView>(R.id.doneFilterButton)?.setOnClickListener {
+                dismiss()
+            }
+        }
+        val filterButton: ImageView = view.findViewById(R.id.filterButton)
+        filterButton.setOnClickListener {
+            filterBottomSheetDialog.show()
         }
 
         /*************** Cart icon navigation ***************/
@@ -124,5 +160,15 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
                 }
             }
         })
+    }
+
+    private fun createSpinnerAdapter(items: List<String>): ArrayAdapter<String> {
+        val arrAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            items
+        )
+        arrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        return arrAdapter
     }
 }
