@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/category_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/category_item_center_margin"
+        android:background="@drawable/category_button_background_selected"
+        android:contentDescription="@string/category_icon"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/category_icon_phones" />
+
+    <TextView
+        android:id="@+id/category_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/category"
+        android:textSize="@dimen/category_text_size"
+        android:textFontWeight="500"
+        tools:targetApi="p" />
+
+</LinearLayout>

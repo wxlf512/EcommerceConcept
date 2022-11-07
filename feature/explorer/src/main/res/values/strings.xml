@@ -1,9 +1,33 @@
 <resources>
     <string name="explorer_fragment">Explorer fragment</string>
+
     <string name="city">City</string>
     <string name="city_selection">City selection</string>
+
     <string name="explorer">Explorer</string>
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
     <string name="favorites">Favorites</string>
+
+    <string name="some_title">Some title</string>
+    <string name="see_more">see more</string>
+<!--    <string name="view_all">view all</string>-->
+
+<!--    <string name="title_select_category">Select Category</string>-->
+<!--    <string name="title_hot_sales">Hot sales</string>-->
+<!--    <string name="title_best_seller">Best Seller</string>-->
+    <string name="image">image</string>
+    <string name="new_badge">New</string>
+    <string name="some_phone">Some phone</string>
+    <string name="some_description">Some description</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="category_icon">Category icon</string>
+    <string name="category">Category</string>
+    <string name="qr_code_button">qr code button</string>
+    <string name="search">Search</string>
+    <string name="best_seller_image">Best seller image</string>
+    <string name="placeholder_cost">$9,999</string>
+    <string name="placeholder_cost_without_discount"><strike>$9,999</strike></string>
+    <string name="favorite_button">Favorite button</string>
+
 </resources>

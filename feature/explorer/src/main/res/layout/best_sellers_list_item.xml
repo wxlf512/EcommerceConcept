@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bestSellersRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/best_sellers_margin_top"
+    android:layout_marginStart="@dimen/best_sellers_margin_start"
+    android:layout_marginEnd="@dimen/best_sellers_margin_end"
+    android:layout_marginBottom="@dimen/best_sellers_margin_bottom"
+    android:overScrollMode="never"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    app:spanCount="2"
+    tools:itemCount="4"
+    tools:listitem="@layout/item_best_saller"/>

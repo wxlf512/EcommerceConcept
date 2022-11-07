@@ -6,5 +6,76 @@
     <dimen name="bottom_nav_bar_explorer_icon_margin_end">7dp</dimen>
     <dimen name="bottom_nav_bar_explorer_icon_margin_start">41dp</dimen>
     <dimen name="bottom_nav_bar_explorer_label_margin_end">20dp</dimen>
+
     <dimen name="filter_button_margin">35dp</dimen>
+    <dimen name="topbar_height">50dp</dimen>
+
+    <dimen name="title_list_item_height">48dp</dimen>
+    <dimen name="title_list_item_title_font_size">25sp</dimen>
+    <dimen name="title_list_item_seemore_font_size">15sp</dimen>
+    <dimen name="title_list_item_seemore_margin_end">27dp</dimen>
+    <dimen name="title_list_item_title_margin_start">17dp</dimen>
+
+    <dimen name="item_hot_sales_width">378dp</dimen>
+    <dimen name="item_hot_sales_height">182dp</dimen>
+
+
+    <dimen name="new_badge_diameter">27dp</dimen>
+    <dimen name="new_badge_font_size">10sp</dimen>
+    <dimen name="new_badge_margin_top">14dp</dimen>
+
+    <dimen name="hot_sales_image_corner_radius">10dp</dimen>
+
+    <dimen name="item_hot_sales_padding_start">25dp</dimen>
+    <dimen name="item_hot_sales_label_font_size">25sp</dimen>
+    <dimen name="item_hot_sales_description_font_size">11sp</dimen>
+
+    <dimen name="hot_sales_buy_button_radius">5dp</dimen>
+    <dimen name="hot_sales_buy_button_text_size">11sp</dimen>
+    <dimen name="hot_sales_buy_button_height">23dp</dimen>
+    <dimen name="hot_sales_buy_button_width">98dp</dimen>
+
+    <dimen name="item_hot_sales_button_margin_top">26dp</dimen>
+    <dimen name="item_hot_sales_description_margin_top">5dp</dimen>
+    <dimen name="item_hot_sales_label_margin_top">18dp</dimen>
+
+    <dimen name="category_list_item_vertical_margin">16dp</dimen>
+    <dimen name="category_list_item_height">104dp</dimen>
+
+    <dimen name="category_button_diameter">71dp</dimen>
+    <dimen name="category_item_center_margin">7dp</dimen>
+    <dimen name="category_item_margin_end">23dp</dimen>
+    <dimen name="category_text_size">12sp</dimen>
+
+    <dimen name="search_list_item_height">34dp</dimen>
+    <dimen name="search_list_item_margin_top">35dp</dimen>
+    <dimen name="search_list_item_margin_bottom">24dp</dimen>
+    <dimen name="search_list_item_margin_start">32dp</dimen>
+    <dimen name="search_list_item_margin_end">37dp</dimen>
+
+    <dimen name="search_radius">50dp</dimen>
+    <dimen name="search_text_size">12sp</dimen>
+    <dimen name="search_padding_start">24dp</dimen>
+    <dimen name="search_drawable_padding">16dp</dimen>
+    <dimen name="search_divider">11dp</dimen>
+
+    <dimen name="best_sellers_margin_top">8dp</dimen>
+    <dimen name="best_sellers_margin_start">17dp</dimen>
+    <dimen name="best_sellers_margin_end">21dp</dimen>
+    <dimen name="best_sellers_margin_bottom">22dp</dimen>
+
+    <dimen name="best_seller_corner_radius">10dp</dimen>
+    <dimen name="best_seller_image_height">177dp</dimen>
+    <dimen name="best_seller_margin_horizontal">21dp</dimen>
+    <dimen name="best_seller_title_margin_bottom">15dp</dimen>
+    <dimen name="best_seller_title_margin_top">5dp</dimen>
+    <dimen name="best_seller_cost_text_size">16sp</dimen>
+    <dimen name="best_seller_title_text_size">10sp</dimen>
+    <dimen name="best_seller_cost_without_discont_text_size">10sp</dimen>
+    <dimen name="best_seller_cost_divider">7dp</dimen>
+    <dimen name="best_seller_favorite_button_radius">25dp</dimen>
+    <dimen name="best_seller_margin_bottom">12dp</dimen>
+    <dimen name="best_seller_favorite_button_elevation">8dp</dimen>
+
+
 </resources>

@@ -12,7 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/white</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/purple</item>
         <item name="fontFamily">@font/mark_pro</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>

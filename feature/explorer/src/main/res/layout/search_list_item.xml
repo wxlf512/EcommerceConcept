@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/search_list_item_margin_top"
+    android:layout_marginBottom="@dimen/search_list_item_margin_bottom"
+    android:layout_marginStart="@dimen/search_list_item_margin_start"
+    android:layout_marginEnd="@dimen/search_list_item_margin_end">
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_list_item_height"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/search"
+        android:importantForAutofill="no"
+        android:background="@drawable/search_bg"
+        android:drawableLeft="@drawable/search_icon"
+        android:drawablePadding="@dimen/search_drawable_padding"
+        android:paddingStart="@dimen/search_padding_start"
+        android:textSize="@dimen/search_text_size"
+        android:textColorHint="@color/purple_transparent"
+        android:textColor="@color/purple"/>
+
+    <ImageView
+        android:id="@+id/qrButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/search_divider"
+        android:background="@drawable/qr_button_bg"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/qr_button_icon"
+        android:contentDescription="@string/qr_code_button" />
+</LinearLayout>

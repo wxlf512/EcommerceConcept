@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:paddingStart="@dimen/item_hot_sales_padding_start"
+        android:background="@drawable/hot_sales_item_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/new_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/new_badge_margin_top"
+            android:background="@drawable/new_badge_background"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/new_badge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/new_badge_font_size"
+                android:textFontWeight="700"
+                android:fontFamily="@font/sf_pro_display"
+                tools:ignore="SmallSp"
+                tools:targetApi="p" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/hotSalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_hot_sales_label_margin_top"
+            android:text="@string/some_phone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/item_hot_sales_label_font_size"
+            android:textFontWeight="700"
+            android:fontFamily="@font/sf_pro_display"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/hotSalesDescr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_hot_sales_description_margin_top"
+            android:text="@string/some_description"
+            android:textColor="@color/white"
+            android:textSize="@dimen/item_hot_sales_description_font_size"
+            android:textFontWeight="700"
+            android:fontFamily="@font/sf_pro_display"
+            tools:targetApi="p" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hotBuyButton"
+            android:layout_width="@dimen/hot_sales_buy_button_width"
+            android:layout_height="@dimen/hot_sales_buy_button_height"
+            android:layout_marginTop="@dimen/item_hot_sales_button_margin_top"
+            android:gravity="center"
+            android:background="@drawable/button_bg"
+            android:text="@string/buy_now"
+            android:textFontWeight="700"
+            android:fontFamily="@font/sf_pro_display"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/hot_sales_buy_button_text_size"
+            tools:targetApi="p" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/hot_sales_image_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/hot_sales_placeholder" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

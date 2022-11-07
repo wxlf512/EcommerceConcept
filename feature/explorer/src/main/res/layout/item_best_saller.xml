@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="181dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/best_seller_margin_bottom"
+    app:cardCornerRadius="@dimen/best_seller_corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/bestSellerImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/best_seller_image_height"
+            android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
+            android:contentDescription="@string/best_seller_image"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/best_seller_image_placeholder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/bestSellerCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_cost"
+                android:textSize="@dimen/best_seller_cost_text_size"
+                android:textFontWeight="700"
+                tools:targetApi="p" />
+
+            <TextView
+                android:id="@+id/bestSellerCostWithoutDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/best_seller_cost_divider"
+                android:text="@string/placeholder_cost_without_discount"
+                android:textColor="@color/best_seller_cost_without_discont_text_color"
+                android:textFontWeight="500"
+                android:textSize="@dimen/best_seller_cost_without_discont_text_size"
+                tools:ignore="SmallSp,TextContrastCheck"
+                tools:targetApi="p" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bestSellerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
+            android:layout_marginBottom="@dimen/best_seller_title_margin_bottom"
+            android:text="@string/some_phone"
+            android:textFontWeight="400"
+            android:textSize="@dimen/best_seller_title_text_size"
+            tools:ignore="SmallSp"
+            tools:targetApi="p" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/favoriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/favorite_button_bg"
+        android:elevation="@dimen/best_seller_favorite_button_elevation" >
+
+        <ImageView
+            android:id="@+id/favoriteButtonIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/favorite_button"
+            app:srcCompat="@drawable/favorite_off_icon"
+            tools:ignore="RedundantDescriptionCheck,ImageContrastCheck" />
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>
