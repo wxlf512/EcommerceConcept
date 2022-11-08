@@ -81,7 +81,7 @@
     <dimen name="filter_layout_full_height">395dp</dimen>
     <dimen name="filter_layout_padding_start">44dp</dimen>
     <dimen name="filter_layout_padding_top">24dp</dimen>
-    <dimen name="filter_layout_padding_right">20dp</dimen>
+    <dimen name="filter_layout_padding_end">20dp</dimen>
     <dimen name="button_corners_radius">10dp</dimen>
     <dimen name="filter_elements_height">37dp</dimen>
     <dimen name="filter_done_button_width">86dp</dimen>

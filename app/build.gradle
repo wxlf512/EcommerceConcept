@@ -42,9 +42,6 @@ dependencies {
     implementation project(":feature:details")
     implementation project(':feature:cart')
     implementation project(":data")
-    implementation project(":data:explorer")
-    implementation project(":data:details")
-    implementation project(':data:cart')
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

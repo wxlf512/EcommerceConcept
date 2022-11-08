@@ -121,6 +121,7 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
                 dismiss()
             }
         }
+
         val filterButton: ImageView = view.findViewById(R.id.filterButton)
         filterButton.setOnClickListener {
             filterBottomSheetDialog.show()

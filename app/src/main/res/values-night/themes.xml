@@ -17,6 +17,7 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="enableEdgeToEdge">true</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
         <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

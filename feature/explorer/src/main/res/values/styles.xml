@@ -3,10 +3,9 @@
     <style name="BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
         <item name="android:backgroundDimEnabled">false</item>
-        <item name="enableEdgeToEdge">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
     </style>
     <style name="bottomSheetStyleWrapper" parent="Widget.MaterialComponents.BottomSheet.Modal">
-        <item name="android:elevation">64dp</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
     </style>
 
