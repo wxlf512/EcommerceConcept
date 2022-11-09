@@ -63,4 +63,7 @@ dependencies {
     def rxJava_version = '3.1.5'
     implementation "io.reactivex.rxjava3:rxjava:$rxJava_version"
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:2.8"
 }

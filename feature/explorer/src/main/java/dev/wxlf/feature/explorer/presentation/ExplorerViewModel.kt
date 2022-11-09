@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dev.wxlf.feature.explorer.R
-import dev.wxlf.feature.explorer.domain.usecases.FetchCartGoodsCountUseCase
-import dev.wxlf.feature.explorer.domain.usecases.FetchItemsDataUseCase
+import dev.wxlf.feature.explorer.domain.usecases.FetchCartUseCase
+import dev.wxlf.feature.explorer.domain.usecases.FetchHotSalesAndBestSellersUseCase
+import dev.wxlf.feature.explorer.domain.usecases.mapToDisplayable
 import dev.wxlf.feature.explorer.presentation.adapters.items.CategoriesListItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.CategoryItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.SearchListItem
@@ -18,8 +19,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 class ExplorerViewModel @Inject constructor(
-    private val fetchItemsDataUseCase: FetchItemsDataUseCase,
-    private val fetchCartGoodsCountUseCase: FetchCartGoodsCountUseCase
+    private val fetchItemsDataUseCase: FetchHotSalesAndBestSellersUseCase,
+    private val fetchCartGoodsCountUseCase: FetchCartUseCase
 ) : ViewModel() {
 
     private val _viewState: MutableLiveData<ExplorerViewState> = MutableLiveData()
@@ -31,12 +32,12 @@ class ExplorerViewModel @Inject constructor(
         when (event) {
             ExplorerEvent.ScreenShown -> {
                 _viewState.postValue(ExplorerViewState.LoadingState)
-                loadItemsData()
+                loadData()
             }
         }
     }
 
-    private fun loadItemsData() {
+    private fun loadData() {
         val items = mutableListOf(
             TitleListItem("Select category", "view all"),
             CategoriesListItem(
@@ -72,13 +73,13 @@ class ExplorerViewModel @Inject constructor(
             ) { p0, p1 -> Pair(p0, p1) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ (itemsList, goodsCount) ->
+                .subscribe({ (itemsList, cart) ->
                     _viewState.postValue(
                         ExplorerViewState.LoadedState(
-                            goodsCount,
+                            cart.basket.size,
                             listOf(
                                 items,
-                                itemsList
+                                itemsList.mapToDisplayable()
                             ).flatten()
                         )
                     )

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
-            android:id="@+id/new_badge"
+            android:id="@+id/newBadge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/new_badge_margin_top"
@@ -29,18 +30,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/sf_pro_display"
                 android:text="@string/new_badge"
                 android:textColor="@color/white"
-                android:textSize="@dimen/new_badge_font_size"
                 android:textFontWeight="700"
-                android:fontFamily="@font/sf_pro_display"
-                tools:ignore="SmallSp"
+                android:textSize="@dimen/new_badge_font_size"
+                tools:ignore="SmallSp,TextContrastCheck"
                 tools:targetApi="p" />
 
         </FrameLayout>
 
         <TextView
-            android:id="@+id/hotSalesLabel"
+            android:id="@+id/hotSaleLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/item_hot_sales_label_margin_top"
@@ -52,7 +53,7 @@
             tools:targetApi="p" />
 
         <TextView
-            android:id="@+id/hotSalesDescr"
+            android:id="@+id/hotSaleDescr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/item_hot_sales_description_margin_top"
@@ -64,7 +65,7 @@
             tools:targetApi="p" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/hotBuyButton"
+            android:id="@+id/hotSaleBuyButton"
             android:layout_width="@dimen/hot_sales_buy_button_width"
             android:layout_height="@dimen/hot_sales_buy_button_height"
             android:layout_marginTop="@dimen/item_hot_sales_button_margin_top"
@@ -84,18 +85,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="@dimen/hot_sales_image_corner_radius"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/hotSaleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/image"
-            android:scaleType="fitEnd"
-            app:srcCompat="@drawable/hot_sales_placeholder" />
+            app:srcCompat="@drawable/placeholder" />
 
     </androidx.cardview.widget.CardView>
 

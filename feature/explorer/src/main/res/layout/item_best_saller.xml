@@ -21,7 +21,7 @@
             android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
             android:contentDescription="@string/best_seller_image"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/best_seller_image_placeholder" />
+            app:srcCompat="@drawable/placeholder" />
 
         <LinearLayout
             android:layout_width="match_parent"

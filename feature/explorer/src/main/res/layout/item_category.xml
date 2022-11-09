@@ -14,7 +14,8 @@
         android:background="@drawable/category_button_background_selected"
         android:contentDescription="@string/category_icon"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/category_icon_phones" />
+        app:srcCompat="@drawable/category_icon_phones"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/category_label"

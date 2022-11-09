@@ -4,7 +4,10 @@ import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import dev.wxlf.data.di.DaggerDataComponent
+import dev.wxlf.data.di.DataComponent
 import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
+//import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
 import dev.wxlf.feature.explorer.di.DaggerExplorerComponent
 import dev.wxlf.feature.explorer.di.ExplorerComponent
 import javax.inject.Inject
@@ -18,15 +21,21 @@ class App : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
 
-
         val appComponent = DaggerAppComponent
             .builder()
             .application(this)
             .explorerComponent(provideExplorerComponent())
+            .dataComponent(provideDataComponent())
             .build()
 
         appComponent.inject(this)
 
+    }
+
+    private fun provideDataComponent(): DataComponent {
+        return DaggerDataComponent
+            .builder()
+            .build()
     }
 
     private fun provideExplorerComponent(): ExplorerComponent {

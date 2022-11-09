@@ -8,6 +8,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import dev.wxlf.feature.explorer.R
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.ListItemAdapterDelegate
@@ -32,6 +33,12 @@ internal class BestSellerAdapterDelegate() :
             cost.text = bestSellerItem.cost
             costWithoutDiscount.text = bestSellerItem.costWithoutDiscount
             costWithoutDiscount.paintFlags = costWithoutDiscount.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+
+            Picasso.get()
+                .load(bestSellerItem.imageUrl)
+                .placeholder(R.drawable.placeholder)
+                .fit()
+                .into(imageView)
 
             if (bestSellerItem.isFavorite) {
                 favoriteButtonIcon.setImageResource(R.drawable.favorite_on_icon)

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,17 +15,18 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/search_list_item_height"
         android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/search"
-        android:importantForAutofill="no"
         android:background="@drawable/search_bg"
         android:drawableLeft="@drawable/search_icon"
         android:drawablePadding="@dimen/search_drawable_padding"
+        android:ems="10"
+        android:hint="@string/search"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
         android:paddingStart="@dimen/search_padding_start"
-        android:textSize="@dimen/search_text_size"
+        android:textColor="@color/purple"
         android:textColorHint="@color/purple_transparent"
-        android:textColor="@color/purple"/>
+        android:textSize="@dimen/search_text_size"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/qrButton"
@@ -32,7 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/search_divider"
         android:background="@drawable/qr_button_bg"
+        android:contentDescription="@string/qr_code_button"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/qr_button_icon"
-        android:contentDescription="@string/qr_code_button" />
+        tools:ignore="ImageContrastCheck,RedundantDescriptionCheck" />
 </LinearLayout>

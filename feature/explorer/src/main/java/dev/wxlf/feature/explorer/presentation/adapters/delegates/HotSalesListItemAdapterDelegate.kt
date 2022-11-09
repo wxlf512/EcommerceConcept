@@ -15,7 +15,7 @@ import dev.wxlf.feature.explorer.presentation.adapters.CompositeAdapter
 import dev.wxlf.feature.explorer.presentation.adapters.items.HotSalesListItem
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.ListItemAdapterDelegate
-import dev.wxlf.feature.explorer.presentation.adapters.items.HotSalesItem
+import dev.wxlf.feature.explorer.presentation.adapters.items.HotSaleItem
 import kotlin.math.abs
 
 internal class HotSalesListItemAdapterDelegate(private val screenDensity: Float) :
@@ -35,7 +35,7 @@ internal class HotSalesListItemAdapterDelegate(private val screenDensity: Float)
 
             val firstElement = hotSalesListItem.list[0]
             val lastElement = hotSalesListItem.list[hotSalesListItem.list.lastIndex]
-            val list: MutableList<HotSalesItem> = hotSalesListItem.list.toMutableList()
+            val list: MutableList<HotSaleItem> = hotSalesListItem.list.toMutableList()
             list.add(0, lastElement)
             list.add(firstElement)
             viewPager.adapter = CompositeAdapter(AdapterDelegatesManager(HotSalesAdapterDelegate()), items = list)

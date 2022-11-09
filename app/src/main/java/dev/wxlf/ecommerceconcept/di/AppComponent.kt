@@ -5,6 +5,8 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
+import dev.wxlf.data.di.DataComponent
+import dev.wxlf.data.di.DataModule
 import dev.wxlf.ecommerceconcept.App
 import dev.wxlf.feature.explorer.di.ExplorerComponent
 import dev.wxlf.feature.explorer.di.modules.ExplorerModule
@@ -17,10 +19,12 @@ import dev.wxlf.feature.explorer.di.modules.ViewModelModule
         AppModule::class,
         ExplorerModule::class,
         UseCaseModule::class,
-        ViewModelModule::class
+        ViewModelModule::class,
+        DataModule::class
     ],
     dependencies = [
-        ExplorerComponent::class
+        ExplorerComponent::class,
+        DataComponent::class
     ]
 )
 @AppScope
@@ -32,6 +36,8 @@ interface AppComponent : AndroidInjector<App>{
         fun application(application: Application): Builder
 
         fun explorerComponent(explorerComponent: ExplorerComponent): Builder
+
+        fun dataComponent(dataComponent: DataComponent): Builder
 
         fun build(): AppComponent
     }

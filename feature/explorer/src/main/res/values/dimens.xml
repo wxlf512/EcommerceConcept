@@ -75,7 +75,7 @@
     <dimen name="best_seller_cost_divider">7dp</dimen>
     <dimen name="best_seller_favorite_button_radius">25dp</dimen>
     <dimen name="best_seller_margin_bottom">12dp</dimen>
-    <dimen name="best_seller_favorite_button_elevation">8dp</dimen>
+    <dimen name="best_seller_favorite_button_elevation">2dp</dimen>
 
     <dimen name="filter_layout_height">375dp</dimen>
     <dimen name="filter_layout_full_height">395dp</dimen>
