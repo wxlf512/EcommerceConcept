@@ -18,7 +18,7 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.android.support.AndroidSupportInjection
 import dev.wxlf.feature.explorer.R
-import dev.wxlf.feature.explorer.helpers.injectViewModel
+import dev.wxlf.feature.explorer.di.modules.ExplorerViewModelFactory
 import dev.wxlf.feature.explorer.presentation.adapters.AdapterDelegatesManager
 import dev.wxlf.feature.explorer.presentation.adapters.CompositeAdapter
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
@@ -33,7 +33,7 @@ import kotlin.math.roundToInt
 class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
 
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: ExplorerViewModelFactory
     lateinit var viewModel: ExplorerViewModel
 
     private var dataLoaded = false
@@ -51,6 +51,7 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        requireActivity().window.navigationBarColor = requireContext().getColor(R.color.purple)
         super.onViewCreated(view, savedInstanceState)
 
         val density = requireContext().resources.displayMetrics.density
@@ -60,7 +61,7 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         cartIcon = bottomNavBar.findViewById(R.id.cartIcon)
 
-        viewModel = injectViewModel(factory = viewModelFactory)
+        viewModel = ViewModelProvider(this, viewModelFactory)[ExplorerViewModel::class.java]
         viewModel.viewState.observe(viewLifecycleOwner) { viewState ->
             when (viewState) {
                 is ExplorerViewState.LoadingState -> {
@@ -137,13 +138,17 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
         }
 
         /*************** Recycler view ***************/
+        val bestSellerAdapterDelegate = BestSellersListItemAdapterDelegate()
+        bestSellerAdapterDelegate.onBestSellerClick = {
+            findNavController().navigate(Uri.parse("ecommerceapp://details"))
+        }
         adapter = CompositeAdapter(
             AdapterDelegatesManager(
                 TitleListItemAdapterDelegate(density),
                 HotSalesListItemAdapterDelegate(density),
                 CategoriesListItemAdapterDelegate(density),
                 SearchListItemAdapterDelegate(),
-                BestSellersListItemAdapterDelegate()
+                bestSellerAdapterDelegate
             ),
             items = listOf()
         )

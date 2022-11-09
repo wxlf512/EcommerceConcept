@@ -12,12 +12,14 @@ import dev.wxlf.feature.explorer.presentation.adapters.AdapterDelegatesManager
 import dev.wxlf.feature.explorer.presentation.adapters.CompositeAdapter
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.ListItemAdapterDelegate
+import dev.wxlf.feature.explorer.presentation.adapters.items.BestSellerItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.BestSellersListItem
 
 internal class BestSellersListItemAdapterDelegate() :
     ListItemAdapterDelegate<BestSellersListItem, DisplayableItem, BestSellersListItemAdapterDelegate.BestSellersViewHolder>() {
 
     lateinit var context: Context
+    var onBestSellerClick: ((BestSellerItem) -> Unit)? = null
 
     inner class BestSellersViewHolder(itemView: View) : ViewHolder(itemView) {
 
@@ -31,8 +33,8 @@ internal class BestSellersListItemAdapterDelegate() :
             )
             recyclerView.layoutManager = GridLayoutManager(context, 2)
             recyclerView.adapter = adapter
-            delegate.onCategoryClick = {
-                adapter.updateData()
+            delegate.onBestSellerClick = {
+                onBestSellerClick?.invoke(it)
             }
         }
     }

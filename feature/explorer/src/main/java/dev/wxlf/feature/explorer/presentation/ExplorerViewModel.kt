@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import dev.wxlf.feature.explorer.R
 import dev.wxlf.feature.explorer.domain.usecases.FetchCartUseCase
 import dev.wxlf.feature.explorer.domain.usecases.FetchHotSalesAndBestSellersUseCase
-import dev.wxlf.feature.explorer.domain.usecases.mapToDisplayable
+import dev.wxlf.feature.explorer.domain.mappers.mapToDisplayable
 import dev.wxlf.feature.explorer.presentation.adapters.items.CategoriesListItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.CategoryItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.SearchListItem

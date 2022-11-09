@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF6E4E</color>
-    <color name="purple">#010035</color>
-    <color name="background_white">#F7F7F7</color>
-    <color name="grey">#B3B3C3</color>
+    <color name="purple">#FF010035</color>
+    <color name="background_white">#FFF7F7F7</color>
+    <color name="grey">#FFB3B3C3</color>
     <color name="purple_transparent">#7F010035</color>
     <color name="best_seller_cost_without_discont_text_color">#FFCCCCCC</color>
     <color name="filter_spinner_border">#FFDCDCDC</color>

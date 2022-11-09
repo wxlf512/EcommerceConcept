@@ -1,4 +1,4 @@
-package dev.wxlf.ecommerceconcept.di
+package dev.wxlf.ecommerceconcept.di.modules
 
 import dagger.Module
 

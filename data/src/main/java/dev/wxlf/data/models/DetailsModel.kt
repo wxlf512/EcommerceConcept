@@ -3,7 +3,7 @@ package dev.wxlf.data.models
 import com.google.gson.annotations.SerializedName
 
 data class DetailsModel(
-    @SerializedName("CPU") val cPU: String,
+    @SerializedName("CPU") val CPU: String,
     @SerializedName("camera") val camera: String,
     @SerializedName("capacity") val capacity: List<Int>,
     @SerializedName("color") val color: List<String>,

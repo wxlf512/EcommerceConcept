@@ -1,11 +1,11 @@
-package dev.wxlf.feature.explorer.domain.usecases
+package dev.wxlf.feature.explorer.domain.mappers
 
 import android.icu.text.NumberFormat
-import android.icu.util.Currency
 import dev.wxlf.data.models.BestSeller
 import dev.wxlf.data.models.HotSale
 import dev.wxlf.data.models.HotSalesAndBestSellerModel
 import dev.wxlf.feature.explorer.presentation.adapters.items.*
+import java.util.*
 
 fun HotSalesAndBestSellerModel.mapToDisplayable() =
     listOf(
@@ -27,9 +27,8 @@ fun HotSale.mapToDisplayable() =
     )
 
 fun BestSeller.mapToDisplayable(): BestSellerItem {
-    val format: NumberFormat = NumberFormat.getCurrencyInstance()
+    val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "US"))
     format.maximumFractionDigits = 0
-    format.currency = Currency.getInstance("USD")
 
     return BestSellerItem(
         label = title,

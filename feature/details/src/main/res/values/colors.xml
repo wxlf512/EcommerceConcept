@@ -7,6 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="orange">#FF6E4E</color>
-    <color name="purple">#010035</color>
+    <color name="orange">#FFFF6E4E</color>
+    <color name="purple">#FF010035</color>
+    <color name="background_white">#FFF7F7F7</color>
+    <color name="grey">#7F000000</color>
+    <color name="star_yellow">#FFFFB800</color>
+    <color name="icons_gray">#FFB7B7B7</color>
+    <color name="capacity_gray">#FF8D8D8D</color>
 </resources>

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="details_fragment">Details fragment</string>
+    <string name="close">Close</string>
+    <string name="product_details">Product Details</string>
+    <string name="cart">Cart</string>
+    <string name="some_phone">Some phone</string>
+    <string name="details_tabs">Detais tabs</string>
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+    <string name="cpu_icon">Cpu icon</string>
+    <string name="camera_icon">Camera icon</string>
+    <string name="ram_icon">Ram icon</string>
+    <string name="memory_icon">Memory icon</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="first_color">First color</string>
+    <string name="second_color">Second color</string>
+    <string name="add_to_cart">Add to Cart</string>
 </resources>

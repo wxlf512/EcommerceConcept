@@ -7,6 +7,8 @@ import dagger.android.HasAndroidInjector
 import dev.wxlf.data.di.DaggerDataComponent
 import dev.wxlf.data.di.DataComponent
 import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
+import dev.wxlf.feature.details.di.DaggerDetailsComponent
+import dev.wxlf.feature.details.di.DetailsComponent
 //import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
 import dev.wxlf.feature.explorer.di.DaggerExplorerComponent
 import dev.wxlf.feature.explorer.di.ExplorerComponent
@@ -24,8 +26,9 @@ class App : Application(), HasAndroidInjector {
         val appComponent = DaggerAppComponent
             .builder()
             .application(this)
-            .explorerComponent(provideExplorerComponent())
             .dataComponent(provideDataComponent())
+            .explorerComponent(provideExplorerComponent())
+            .detailsComponent(provideDetailsComponent())
             .build()
 
         appComponent.inject(this)
@@ -40,6 +43,12 @@ class App : Application(), HasAndroidInjector {
 
     private fun provideExplorerComponent(): ExplorerComponent {
         return DaggerExplorerComponent
+            .builder()
+            .build()
+    }
+
+    private fun provideDetailsComponent(): DetailsComponent {
+        return DaggerDetailsComponent
             .builder()
             .build()
     }

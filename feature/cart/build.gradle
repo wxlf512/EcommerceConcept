@@ -32,7 +32,7 @@ android {
 
 dependencies {
 
-    // Data modules
+    // Project
     implementation project(':data')
 
     implementation 'androidx.core:core-ktx:1.9.0'

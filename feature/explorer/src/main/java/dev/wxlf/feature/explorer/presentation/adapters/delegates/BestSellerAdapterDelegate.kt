@@ -18,7 +18,7 @@ import dev.wxlf.feature.explorer.presentation.adapters.items.BestSellerItem
 internal class BestSellerAdapterDelegate() :
     ListItemAdapterDelegate<BestSellerItem, DisplayableItem, BestSellerAdapterDelegate.BestSellerItemViewHolder>() {
 
-    var onCategoryClick: (() -> Unit)? = null
+    var onBestSellerClick: ((BestSellerItem) -> Unit)? = null
 
     inner class BestSellerItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val label: TextView = itemView.findViewById(R.id.bestSellerLabel)
@@ -27,6 +27,7 @@ internal class BestSellerAdapterDelegate() :
         private val imageView: ImageView = itemView.findViewById(R.id.bestSellerImageView)
         private val favoriteButton: FrameLayout = itemView.findViewById(R.id.favoriteButton)
         private val favoriteButtonIcon: ImageView = itemView.findViewById(R.id.favoriteButtonIcon)
+        private val view: View = itemView
 
         fun bind(bestSellerItem: BestSellerItem) {
             label.text = bestSellerItem.label
@@ -46,9 +47,17 @@ internal class BestSellerAdapterDelegate() :
                 favoriteButtonIcon.setImageResource(R.drawable.favorite_off_icon)
             }
 
+            view.setOnClickListener {
+                onBestSellerClick?.invoke(bestSellerItem)
+            }
+
             favoriteButton.setOnClickListener {
-                onCategoryClick?.invoke()
                 bestSellerItem.isFavorite = !bestSellerItem.isFavorite
+                if (bestSellerItem.isFavorite) {
+                    favoriteButtonIcon.setImageResource(R.drawable.favorite_on_icon)
+                } else {
+                    favoriteButtonIcon.setImageResource(R.drawable.favorite_off_icon)
+                }
             }
         }
     }

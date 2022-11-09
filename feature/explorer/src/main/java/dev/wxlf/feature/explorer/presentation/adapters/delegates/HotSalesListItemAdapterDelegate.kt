@@ -17,6 +17,7 @@ import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableI
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.ListItemAdapterDelegate
 import dev.wxlf.feature.explorer.presentation.adapters.items.HotSaleItem
 import kotlin.math.abs
+import kotlin.math.roundToInt
 
 internal class HotSalesListItemAdapterDelegate(private val screenDensity: Float) :
     ListItemAdapterDelegate<HotSalesListItem, DisplayableItem, HotSalesListItemAdapterDelegate.HotSalesViewHolder>() {
@@ -28,7 +29,7 @@ internal class HotSalesListItemAdapterDelegate(private val screenDensity: Float)
             viewPager.apply {
                 clipChildren = false
                 clipToPadding = false
-                offscreenPageLimit = 3
+                offscreenPageLimit = 1
                 (getChildAt(0) as RecyclerView).overScrollMode =
                     RecyclerView.OVER_SCROLL_NEVER
             }
@@ -41,7 +42,7 @@ internal class HotSalesListItemAdapterDelegate(private val screenDensity: Float)
             viewPager.adapter = CompositeAdapter(AdapterDelegatesManager(HotSalesAdapterDelegate()), items = list)
             viewPager.setCurrentItem(1, false)
             val compositePageTransformer = CompositePageTransformer()
-            compositePageTransformer.addTransformer(MarginPageTransformer(abs(36 * screenDensity).toInt()))
+            compositePageTransformer.addTransformer(MarginPageTransformer((36 * screenDensity).roundToInt()))
             compositePageTransformer.addTransformer { page, position ->
                 val r = 1 - abs(position)
                 page.scaleY = (0.80f + r * 0.20f)
