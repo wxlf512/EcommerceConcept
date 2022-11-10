@@ -7,6 +7,8 @@ import dagger.android.HasAndroidInjector
 import dev.wxlf.data.di.DaggerDataComponent
 import dev.wxlf.data.di.DataComponent
 import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
+import dev.wxlf.feature.cart.di.CartComponent
+import dev.wxlf.feature.cart.di.DaggerCartComponent
 import dev.wxlf.feature.details.di.DaggerDetailsComponent
 import dev.wxlf.feature.details.di.DetailsComponent
 //import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
@@ -16,7 +18,8 @@ import javax.inject.Inject
 
 class App : Application(), HasAndroidInjector {
 
-    @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+    @Inject
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
@@ -29,27 +32,30 @@ class App : Application(), HasAndroidInjector {
             .dataComponent(provideDataComponent())
             .explorerComponent(provideExplorerComponent())
             .detailsComponent(provideDetailsComponent())
+            .cartComponent(provideCartComponent())
             .build()
 
         appComponent.inject(this)
 
     }
 
-    private fun provideDataComponent(): DataComponent {
-        return DaggerDataComponent
+    private fun provideDataComponent(): DataComponent =
+        DaggerDataComponent
             .builder()
             .build()
-    }
 
-    private fun provideExplorerComponent(): ExplorerComponent {
-        return DaggerExplorerComponent
+    private fun provideExplorerComponent(): ExplorerComponent =
+        DaggerExplorerComponent
             .builder()
             .build()
-    }
 
-    private fun provideDetailsComponent(): DetailsComponent {
-        return DaggerDetailsComponent
+    private fun provideDetailsComponent(): DetailsComponent =
+        DaggerDetailsComponent
             .builder()
             .build()
-    }
+
+    private fun provideCartComponent(): CartComponent =
+        DaggerCartComponent
+        .builder()
+        .build()
 }

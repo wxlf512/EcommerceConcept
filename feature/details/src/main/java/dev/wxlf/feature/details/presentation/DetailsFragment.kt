@@ -20,11 +20,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import dagger.android.support.AndroidSupportInjection
 import dev.wxlf.feature.details.R
-import dev.wxlf.feature.details.di.DetailsViewModelFactory
+import dev.wxlf.feature.details.presentation.viewmodel.DetailsViewModelFactory
 import dev.wxlf.feature.details.presentation.models.DetailsDisplayableModel
 import dev.wxlf.feature.details.presentation.models.DetailsEvent
 import dev.wxlf.feature.details.presentation.models.DetailsViewState
-import dev.wxlf.feature.details.presentation.viewpager.ViewPagerAdapter
+import dev.wxlf.feature.details.presentation.viewmodel.DetailsViewModel
+import dev.wxlf.feature.details.presentation.adapters.ViewPagerAdapter
 import javax.inject.Inject
 import kotlin.math.abs
 import kotlin.math.roundToInt

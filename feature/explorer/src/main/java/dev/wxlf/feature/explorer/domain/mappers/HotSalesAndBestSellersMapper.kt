@@ -4,10 +4,11 @@ import android.icu.text.NumberFormat
 import dev.wxlf.data.models.BestSeller
 import dev.wxlf.data.models.HotSale
 import dev.wxlf.data.models.HotSalesAndBestSellerModel
+import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
 import dev.wxlf.feature.explorer.presentation.adapters.items.*
 import java.util.*
 
-fun HotSalesAndBestSellerModel.mapToDisplayable() =
+fun HotSalesAndBestSellerModel.mapToDisplayable(): List<DisplayableItem> =
     listOf(
         HotSalesListItem(
             hotSales.map { it.mapToDisplayable() }
@@ -17,7 +18,7 @@ fun HotSalesAndBestSellerModel.mapToDisplayable() =
         )
     )
 
-fun HotSale.mapToDisplayable() =
+fun HotSale.mapToDisplayable(): HotSaleItem =
     HotSaleItem(
         label = title,
         description = subtitle,

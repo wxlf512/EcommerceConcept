@@ -1,10 +1,9 @@
-package dev.wxlf.feature.explorer.di.modules
+package dev.wxlf.feature.explorer.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dev.wxlf.feature.explorer.domain.usecases.FetchCartUseCase
 import dev.wxlf.feature.explorer.domain.usecases.FetchHotSalesAndBestSellersUseCase
-import dev.wxlf.feature.explorer.presentation.ExplorerViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ExplorerViewModelFactory(

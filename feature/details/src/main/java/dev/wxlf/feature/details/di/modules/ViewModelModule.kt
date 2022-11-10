@@ -2,11 +2,11 @@ package dev.wxlf.feature.details.di.modules
 
 import dagger.Module
 import dagger.Provides
-import dev.wxlf.feature.details.di.DetailsViewModelFactory
+import dev.wxlf.feature.details.presentation.viewmodel.DetailsViewModelFactory
 import dev.wxlf.feature.details.domain.usecases.FetchDetailsUseCase
 
 @Module
-class DetailsViewModelModule {
+class ViewModelModule {
 
     @Provides
     internal fun providesViewModelFactory(

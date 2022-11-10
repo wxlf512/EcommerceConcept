@@ -5,9 +5,9 @@ import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dev.wxlf.feature.details.presentation.DetailsFragment
-import dev.wxlf.feature.details.presentation.DetailsViewModel
+import dev.wxlf.feature.details.presentation.viewmodel.DetailsViewModel
 
-@Module
+@Module(includes = [ViewModelModule::class, UseCaseModule::class])
 abstract class DetailsModule {
 
     @ContributesAndroidInjector

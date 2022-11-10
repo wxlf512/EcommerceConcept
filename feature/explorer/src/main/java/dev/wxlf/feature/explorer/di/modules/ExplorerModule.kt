@@ -5,9 +5,9 @@ import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dev.wxlf.feature.explorer.presentation.ExplorerFragment
-import dev.wxlf.feature.explorer.presentation.ExplorerViewModel
+import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModel
 
-@Module
+@Module(includes = [ViewModelModule::class, UseCaseModule::class])
 abstract class ExplorerModule {
 
     @ContributesAndroidInjector

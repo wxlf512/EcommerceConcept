@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CartModel(
     @SerializedName("basket")
-    val basket: List<Basket>,
+    val basket: List<CartItemModel>,
 
     @SerializedName("delivery")
     val delivery: String,
@@ -16,7 +16,7 @@ data class CartModel(
     val total: Int
 )
 
-data class Basket(
+data class CartItemModel(
     @SerializedName("id")
     val id: Int,
 

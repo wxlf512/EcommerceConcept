@@ -7,13 +7,20 @@
     android:layout_height="@dimen/image_size"
     android:layout_marginBottom="46dp">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.cardview.widget.CardView
         android:layout_width="@dimen/image_size"
         android:layout_height="@dimen/image_size"
-        app:srcCompat="@drawable/placeholder"
-        tools:ignore="ImageContrastCheck"
-        android:contentDescription="@string/image" />
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp" >
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            app:srcCompat="@drawable/placeholder"
+            tools:ignore="ImageContrastCheck"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/image" />
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -37,9 +44,8 @@
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="7dp"
-            android:layout_weight="1"
             android:gravity="bottom"
             android:text="@string/price_placeholder"
             android:textColor="@color/orange"
@@ -61,12 +67,12 @@
         android:orientation="vertical" >
 
         <ImageView
-            android:id="@+id/minusButton"
+            android:id="@+id/decrementButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/minus_button"
             android:paddingTop="14dp"
-            android:paddingBottom="6dp"
+            android:paddingBottom="2dp"
             android:scaleType="center"
             app:srcCompat="@drawable/minus_icon"
             tools:ignore="RedundantDescriptionCheck" />
@@ -84,12 +90,12 @@
             tools:targetApi="p" />
 
         <ImageView
-            android:id="@+id/plusButton"
+            android:id="@+id/incrementButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/plus_button"
             android:paddingTop="6dp"
-            android:paddingBottom="8dp"
+            android:paddingBottom="10dp"
             android:scaleType="center"
             app:srcCompat="@drawable/plus_icon"
             tools:ignore="RedundantDescriptionCheck" />

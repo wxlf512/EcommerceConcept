@@ -18,7 +18,7 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.android.support.AndroidSupportInjection
 import dev.wxlf.feature.explorer.R
-import dev.wxlf.feature.explorer.di.modules.ExplorerViewModelFactory
+import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModelFactory
 import dev.wxlf.feature.explorer.presentation.adapters.AdapterDelegatesManager
 import dev.wxlf.feature.explorer.presentation.adapters.CompositeAdapter
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
@@ -26,6 +26,7 @@ import dev.wxlf.feature.explorer.presentation.adapters.delegates.*
 import dev.wxlf.feature.explorer.presentation.adapters.items.TitleListItem
 import dev.wxlf.feature.explorer.presentation.models.ExplorerEvent
 import dev.wxlf.feature.explorer.presentation.models.ExplorerViewState
+import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModel
 import javax.inject.Inject
 import kotlin.math.roundToInt
 

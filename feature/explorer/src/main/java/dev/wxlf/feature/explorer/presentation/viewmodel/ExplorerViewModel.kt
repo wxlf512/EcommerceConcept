@@ -1,4 +1,4 @@
-package dev.wxlf.feature.explorer.presentation
+package dev.wxlf.feature.explorer.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

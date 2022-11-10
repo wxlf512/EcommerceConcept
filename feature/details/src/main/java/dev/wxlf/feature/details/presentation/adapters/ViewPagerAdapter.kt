@@ -1,4 +1,4 @@
-package dev.wxlf.feature.details.presentation.viewpager
+package dev.wxlf.feature.details.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import dev.wxlf.feature.details.R
 
-class ViewPagerAdapter(private val imagesUrls: List<String>) : RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
+class ViewPagerAdapter(private val imagesUrls: List<String>) :
+    RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
 
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder =
-        ViewPagerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.image_page, parent, false))
+        ViewPagerViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.image_page, parent, false)
+        )
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
         Picasso.get()
