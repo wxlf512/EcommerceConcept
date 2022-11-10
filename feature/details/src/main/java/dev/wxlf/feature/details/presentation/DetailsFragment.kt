@@ -12,7 +12,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -152,12 +151,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             findNavController().navigate(Uri.parse("ecommerceapp://cart"))
         }
         view.findViewById<ImageButton>(R.id.closeButton).setOnClickListener {
-            findNavController().navigate(Uri.parse("ecommerceapp://explorer"),
-                navOptions {
-                    popUpTo(R.id.nav_graph_details) {
-                        inclusive = true
-                    }
-                })
+            findNavController().popBackStack()
         }
     }
 

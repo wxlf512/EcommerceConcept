@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/image_size"
+    android:layout_marginBottom="46dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        app:srcCompat="@drawable/placeholder"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/image" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="17dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/title_placeholder"
+            android:textColor="@color/white"
+            android:textFontWeight="500"
+            android:textSize="20sp"
+            tools:ignore="NestedWeights,TextContrastCheck"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/price_placeholder"
+            android:textColor="@color/orange"
+            android:textFontWeight="500"
+            android:textSize="20sp"
+            tools:ignore="TextContrastCheck"
+            tools:targetApi="p" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="26dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/count_background"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/minusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/minus_button"
+            android:paddingTop="14dp"
+            android:paddingBottom="6dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/minus_icon"
+            tools:ignore="RedundantDescriptionCheck" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/count_placeholder"
+            android:textColor="@color/white"
+            android:textFontWeight="500"
+            android:textSize="20sp"
+            android:lineHeight="25dp"
+            tools:ignore="NestedWeights"
+            tools:targetApi="p" />
+
+        <ImageView
+            android:id="@+id/plusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/plus_button"
+            android:paddingTop="6dp"
+            android:paddingBottom="8dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/plus_icon"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="17dp"
+        app:srcCompat="@drawable/trash_icon"
+        android:contentDescription="@string/delete_product" />
+
+</LinearLayout>

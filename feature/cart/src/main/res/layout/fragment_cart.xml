@@ -1,17 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/purple_button_background"
+                android:contentDescription="@string/close"
+                app:srcCompat="@drawable/close_icon"
+                tools:ignore="TouchTargetSizeCheck" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="9dp"
+            android:gravity="end"
+            android:text="@string/add_address"
+            android:textFontWeight="500"
+            android:textSize="15sp"
+            tools:targetApi="p" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/addressButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/orange_button_background"
+                android:contentDescription="@string/add_address"
+                app:srcCompat="@drawable/gps_icon"
+                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
+        </FrameLayout>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cart_fragment"
-        android:textSize="42sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="49dp"
+        android:text="@string/my_cart"
+        android:textSize="35sp"
+        android:textFontWeight="700"
+        tools:targetApi="p" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="80dp"
+        android:paddingBottom="44dp"
+        android:background="@drawable/cart_background"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="32.25dp"
+            tools:listitem="@layout/cart_item"
+            tools:itemCount="2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="#40FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:paddingTop="15dp"
+                android:paddingStart="55dp"
+                android:paddingBottom="26dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/total"
+                    android:textSize="@dimen/bottom_text_size"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery"
+                    android:textSize="@dimen/bottom_text_size"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingEnd="35dp"
+                android:paddingBottom="26dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="@dimen/bottom_text_size"
+                    android:textColor="@color/white"
+                    android:textFontWeight="700"
+                    tools:targetApi="p" />
+
+                <TextView
+                    android:id="@+id/deliveryPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/bottom_text_size"
+                    android:textColor="@color/white"
+                    android:textFontWeight="700"
+                    tools:targetApi="p" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="#40FFFFFF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:layout_marginTop="27dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/orange_button_background"
+            android:gravity="center"
+            android:text="@string/checkout"
+            android:textSize="20sp"
+            android:textFontWeight="700"
+            android:textColor="@color/white"
+            tools:targetApi="p" />
+
+    </LinearLayout>
+
+</LinearLayout>
