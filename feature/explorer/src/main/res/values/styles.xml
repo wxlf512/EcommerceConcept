@@ -11,6 +11,6 @@
 
     <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/filter_corners_radius</item>
+        <item name="cornerSize">30dp</item>
     </style>
 </resources>

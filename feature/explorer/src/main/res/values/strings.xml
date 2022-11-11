@@ -16,7 +16,7 @@
 <!--    <string name="title_select_category">Select Category</string>-->
 <!--    <string name="title_hot_sales">Hot sales</string>-->
 <!--    <string name="title_best_seller">Best Seller</string>-->
-    <string name="image">image</string>
+    <string name="image">Image</string>
     <string name="new_badge">New</string>
     <string name="some_phone">Some phone</string>
     <string name="some_description">Some description</string>

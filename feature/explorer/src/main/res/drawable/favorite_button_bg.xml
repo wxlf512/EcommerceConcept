@@ -3,6 +3,6 @@
     android:shape="oval">
 
     <solid android:color="@color/white" />
-    <size android:width="25dp" android:height="@dimen/best_seller_favorite_button_radius" />
+    <size android:width="@dimen/best_seller_favorite_button_diameter" android:height="@dimen/best_seller_favorite_button_diameter" />
 
 </shape>

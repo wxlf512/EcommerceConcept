@@ -10,7 +10,7 @@
         android:id="@+id/category_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/category_item_center_margin"
+        android:layout_marginBottom="7dp"
         android:background="@drawable/category_button_background_selected"
         android:contentDescription="@string/category_icon"
         android:scaleType="centerInside"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/category"
-        android:textSize="@dimen/category_text_size"
+        android:textSize="12sp"
         android:textFontWeight="500"
         tools:targetApi="p" />
 

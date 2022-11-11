@@ -5,10 +5,10 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/search_list_item_margin_top"
-    android:layout_marginBottom="@dimen/search_list_item_margin_bottom"
-    android:layout_marginStart="@dimen/search_list_item_margin_start"
-    android:layout_marginEnd="@dimen/search_list_item_margin_end">
+    android:layout_marginTop="35dp"
+    android:layout_marginBottom="24dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="37dp">
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -17,22 +17,22 @@
         android:layout_weight="1"
         android:background="@drawable/search_bg"
         android:drawableLeft="@drawable/search_icon"
-        android:drawablePadding="@dimen/search_drawable_padding"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/search"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:paddingStart="@dimen/search_padding_start"
+        android:paddingStart="24dp"
         android:textColor="@color/purple"
         android:textColorHint="@color/purple_transparent"
-        android:textSize="@dimen/search_text_size"
+        android:textSize="12sp"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/qrButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/search_divider"
+        android:layout_marginStart="11dp"
         android:background="@drawable/qr_button_bg"
         android:contentDescription="@string/qr_code_button"
         android:scaleType="centerInside"

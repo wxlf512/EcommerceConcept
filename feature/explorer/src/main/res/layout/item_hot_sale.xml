@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:elevation="8dp"
-        android:paddingStart="@dimen/item_hot_sales_padding_start"
+        android:paddingStart="25dp"
         android:background="@drawable/hot_sales_item_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
             android:id="@+id/newBadge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/new_badge_margin_top"
+            android:layout_marginTop="14dp"
             android:background="@drawable/new_badge_background"
             tools:ignore="UselessParent">
 
@@ -34,7 +34,7 @@
                 android:text="@string/new_badge"
                 android:textColor="@color/white"
                 android:textFontWeight="700"
-                android:textSize="@dimen/new_badge_font_size"
+                android:textSize="10sp"
                 tools:ignore="SmallSp,TextContrastCheck"
                 tools:targetApi="p" />
 
@@ -44,38 +44,38 @@
             android:id="@+id/hotSaleLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_hot_sales_label_margin_top"
+            android:layout_marginTop="18dp"
             android:text="@string/some_phone"
             android:textColor="@color/white"
-            android:textSize="@dimen/item_hot_sales_label_font_size"
+            android:textSize="25sp"
             android:textFontWeight="700"
             android:fontFamily="@font/sf_pro_display"
             tools:targetApi="p" />
 
         <TextView
-            android:id="@+id/hotSaleDescr"
+            android:id="@+id/hotSaleDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_hot_sales_description_margin_top"
+            android:layout_marginTop="5dp"
             android:text="@string/some_description"
             android:textColor="@color/white"
-            android:textSize="@dimen/item_hot_sales_description_font_size"
+            android:textSize="11sp"
             android:textFontWeight="700"
             android:fontFamily="@font/sf_pro_display"
             tools:targetApi="p" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/hotSaleBuyButton"
-            android:layout_width="@dimen/hot_sales_buy_button_width"
-            android:layout_height="@dimen/hot_sales_buy_button_height"
-            android:layout_marginTop="@dimen/item_hot_sales_button_margin_top"
+            android:layout_width="98dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="26dp"
             android:gravity="center"
             android:background="@drawable/button_bg"
             android:text="@string/buy_now"
             android:textFontWeight="700"
             android:fontFamily="@font/sf_pro_display"
             android:textColor="@color/purple"
-            android:textSize="@dimen/hot_sales_buy_button_text_size"
+            android:textSize="11sp"
             tools:targetApi="p" />
 
     </LinearLayout>

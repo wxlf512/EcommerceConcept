@@ -12,6 +12,6 @@
     <color name="background_white">#FFF7F7F7</color>
     <color name="grey">#FFB3B3C3</color>
     <color name="purple_transparent">#7F010035</color>
-    <color name="best_seller_cost_without_discont_text_color">#FFCCCCCC</color>
+    <color name="best_seller_cost_without_discount_text_color">#FFCCCCCC</color>
     <color name="filter_spinner_border">#FFDCDCDC</color>
 </resources>

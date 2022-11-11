@@ -2,10 +2,9 @@
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/categoriesRecyclerView"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/category_list_item_height"
+    android:layout_height="104dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="@dimen/category_list_item_vertical_margin"
-    android:layout_marginBottom="@dimen/category_list_item_vertical_margin"
+    android:layout_marginTop="16dp"
     android:orientation="horizontal"
     tools:listitem="@layout/item_category">
 

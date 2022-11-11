@@ -2,7 +2,12 @@
 <resources>
     <dimen name="icon_size">28dp</dimen>
     <dimen name="icon_label_divider">5dp</dimen>
+
     <dimen name="color_diam">39dp</dimen>
     <dimen name="capacity_text_size">13sp</dimen>
+
     <dimen name="add_to_cart_text_size">20sp</dimen>
+
+    <dimen name="button_corners_radius">10dp</dimen>
+    <dimen name="button_size">37dp</dimen>
 </resources>

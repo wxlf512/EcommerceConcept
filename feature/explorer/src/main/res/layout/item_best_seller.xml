@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="181dp"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/best_seller_margin_bottom"
-    app:cardCornerRadius="@dimen/best_seller_corner_radius"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="0dp">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/bestSellerImageView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/best_seller_image_height"
+            android:layout_height="177dp"
             android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
             android:contentDescription="@string/best_seller_image"
             android:scaleType="centerCrop"
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder_cost"
-                android:textSize="@dimen/best_seller_cost_text_size"
+                android:textSize="16sp"
                 android:textFontWeight="700"
                 tools:targetApi="p" />
 
@@ -43,11 +43,11 @@
                 android:id="@+id/bestSellerCostWithoutDiscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/best_seller_cost_divider"
+                android:layout_marginStart="7dp"
                 android:text="@string/placeholder_cost_without_discount"
-                android:textColor="@color/best_seller_cost_without_discont_text_color"
+                android:textColor="@color/best_seller_cost_without_discount_text_color"
                 android:textFontWeight="500"
-                android:textSize="@dimen/best_seller_cost_without_discont_text_size"
+                android:textSize="10sp"
                 tools:ignore="SmallSp,TextContrastCheck"
                 tools:targetApi="p" />
 
@@ -58,10 +58,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/best_seller_margin_horizontal"
-            android:layout_marginBottom="@dimen/best_seller_title_margin_bottom"
+            android:layout_marginBottom="15dp"
             android:text="@string/some_phone"
             android:textFontWeight="400"
-            android:textSize="@dimen/best_seller_title_text_size"
+            android:textSize="10sp"
             tools:ignore="SmallSp"
             tools:targetApi="p" />
     </LinearLayout>
@@ -74,7 +74,7 @@
         android:layout_marginEnd="12dp"
         android:layout_gravity="top|end"
         android:background="@drawable/favorite_button_bg"
-        android:elevation="@dimen/best_seller_favorite_button_elevation" >
+        android:elevation="2dp" >
 
         <ImageView
             android:id="@+id/favoriteButtonIcon"

@@ -8,7 +8,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/hotSalesViewPager"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/item_hot_sales_height"
+        android:layout_height="182dp"
         android:paddingStart="15dp"
         android:paddingEnd="21dp"/>
 

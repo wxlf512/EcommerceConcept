@@ -64,7 +64,7 @@ internal class BestSellerAdapterDelegate() :
 
     override fun onCreateViewHolder(parent: ViewGroup): BestSellerItemViewHolder =
         BestSellerItemViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_best_saller, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_best_seller, parent, false)
         )
 
     override fun isForViewType(item: DisplayableItem): Boolean = item is BestSellerItem

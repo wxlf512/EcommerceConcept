@@ -5,7 +5,7 @@
     android:id="@+id/bottomNavView"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/bottom_nav_bar_height"
+    android:layout_height="72dp"
     android:gravity="center_vertical"
     android:background="@drawable/bottom_nav_background"
     android:paddingStart="@dimen/bottom_nav_bar_padding"
@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/explorer_bottom_nav_icon"
         android:contentDescription="@string/explorer"
-        android:layout_marginStart="@dimen/bottom_nav_bar_explorer_icon_margin_start"
-        android:layout_marginEnd="@dimen/bottom_nav_bar_explorer_icon_margin_end"/>
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="7dp"/>
 
     <TextView
         android:id="@+id/explorerLabel"
@@ -28,7 +28,7 @@
         android:text="@string/explorer"
         android:textColor="@color/white"
         android:textFontWeight="700"
-        android:layout_marginEnd="@dimen/bottom_nav_bar_explorer_label_margin_end"
+        android:layout_marginEnd="20dp"
         tools:targetApi="p" />
 
     <ImageView

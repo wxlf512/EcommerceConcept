@@ -23,7 +23,7 @@ internal class HotSalesAdapterDelegate() :
 
     inner class HotSalesItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val label: TextView = itemView.findViewById(R.id.hotSaleLabel)
-        val description: TextView = itemView.findViewById(R.id.hotSaleDescr)
+        val description: TextView = itemView.findViewById(R.id.hotSaleDescription)
         val newBadge: FrameLayout = itemView.findViewById(R.id.newBadge)
         val buyButton: AppCompatButton = itemView.findViewById(R.id.hotSaleBuyButton)
         val background: ImageView = itemView.findViewById(R.id.hotSaleBackground)
