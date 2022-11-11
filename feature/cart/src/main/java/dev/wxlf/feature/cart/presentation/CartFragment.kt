@@ -61,6 +61,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
             }
         }
 
+        /*************** Navigation ***************/
         view.findViewById<ImageButton>(R.id.closeButton).setOnClickListener {
             findNavController().popBackStack()
         }

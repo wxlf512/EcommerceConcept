@@ -10,7 +10,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.badge.BadgeDrawable
@@ -39,7 +38,6 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
 
     private var dataLoaded = false
     private lateinit var adapter: CompositeAdapter<DisplayableItem>
-    private lateinit var cartIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requireActivity().window.statusBarColor =
@@ -61,7 +59,7 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
         val bottomNavBar = view.findViewById<LinearLayout>(R.id.bottomNavView)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        cartIcon = bottomNavBar.findViewById(R.id.cartIcon)
+        val cartIcon = bottomNavBar.findViewById<ImageView>(R.id.cartIcon)
 
         viewModel = ViewModelProvider(this, viewModelFactory)[ExplorerViewModel::class.java]
         viewModel.viewState.observe(viewLifecycleOwner) { viewState ->
@@ -132,13 +130,9 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
             filterBottomSheetDialog.show()
         }
 
-        /*************** Cart icon navigation ***************/
+        /*************** Navigation ***************/
         cartIcon.setOnClickListener {
-            findNavController().navigate(Uri.parse("ecommerceapp://cart"),
-                navOptions {
-                    anim {
-                    }
-                })
+            findNavController().navigate(Uri.parse("ecommerceapp://cart"))
         }
 
         /*************** Recycler view ***************/

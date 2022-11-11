@@ -118,7 +118,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             updateDetails()
         }
 
-
+        /*************** Set up tabs appearance ***************/
         val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
         with(tabLayout.getTabAt(tabLayout.selectedTabPosition)) {
             val customView = this?.customView
@@ -129,7 +129,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             label?.setTextColor(tabLayout.tabTextColors)
             label?.typeface = Typeface.DEFAULT_BOLD
         }
-
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val customView = tab?.customView
@@ -152,8 +151,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {}
-
         })
+
+        /*************** Navigation ***************/
         view.findViewById<ImageButton>(R.id.cartButton).setOnClickListener {
             findNavController().navigate(Uri.parse("ecommerceapp://cart"))
         }
