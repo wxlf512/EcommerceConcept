@@ -34,7 +34,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     @Inject
     lateinit var viewModelFactory: DetailsViewModelFactory
-    lateinit var viewModel: DetailsViewModel
+    private lateinit var viewModel: DetailsViewModel
 
     lateinit var details: DetailsDisplayableModel
 
@@ -44,6 +44,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         super.onCreate(savedInstanceState)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -98,9 +99,14 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                     })
 
                     updateDetails()
-                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.INVISIBLE
+                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
                 }
-                is DetailsViewState.ErrorState -> {}
+                is DetailsViewState.ErrorState -> {
+                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
+                    val errorView = view.findViewById<TextView>(R.id.errorTextView)
+                    errorView.visibility = View.VISIBLE
+                    errorView.text = "Error: ${viewState.msg}"
+                }
                 DetailsViewState.LoadingState -> {
                     view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
                 }

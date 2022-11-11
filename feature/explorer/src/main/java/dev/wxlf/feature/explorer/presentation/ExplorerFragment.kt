@@ -1,5 +1,6 @@
 package dev.wxlf.feature.explorer.presentation
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -18,15 +19,14 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.android.support.AndroidSupportInjection
 import dev.wxlf.feature.explorer.R
-import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModelFactory
 import dev.wxlf.feature.explorer.presentation.adapters.AdapterDelegatesManager
 import dev.wxlf.feature.explorer.presentation.adapters.CompositeAdapter
 import dev.wxlf.feature.explorer.presentation.adapters.abstractions.DisplayableItem
 import dev.wxlf.feature.explorer.presentation.adapters.delegates.*
-import dev.wxlf.feature.explorer.presentation.adapters.items.TitleListItem
 import dev.wxlf.feature.explorer.presentation.models.ExplorerEvent
 import dev.wxlf.feature.explorer.presentation.models.ExplorerViewState
 import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModel
+import dev.wxlf.feature.explorer.presentation.viewmodel.ExplorerViewModelFactory
 import javax.inject.Inject
 import kotlin.math.roundToInt
 
@@ -51,6 +51,7 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         requireActivity().window.navigationBarColor = requireContext().getColor(R.color.purple)
         super.onViewCreated(view, savedInstanceState)
@@ -87,7 +88,9 @@ class ExplorerFragment : Fragment(R.layout.fragment_explorer) {
                 }
                 is ExplorerViewState.ErrorState -> {
                     progressBar.visibility = View.GONE
-                    adapter.setData(listOf(TitleListItem(viewState.msg, "")))
+                    val errorView = view.findViewById<TextView>(R.id.errorTextView)
+                    errorView.visibility = View.VISIBLE
+                    errorView.text = "Error: ${viewState.msg}"
                 }
             }
         }

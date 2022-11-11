@@ -1,8 +1,10 @@
 package dev.wxlf.feature.cart.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -30,6 +32,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         super.onCreate(savedInstanceState)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -42,13 +45,19 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         viewModel.obtainEvent(CartEvent.ScreenShown)
         viewModel.viewState.observe(viewLifecycleOwner) { viewState ->
             when (viewState) {
-                CartViewState.LoadingState -> {}
+                CartViewState.LoadingState -> {
+                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
+                }
                 is CartViewState.LoadedState -> {
                     view.findViewById<TextView>(R.id.totalPrice).text = viewState.data.total
                     view.findViewById<TextView>(R.id.deliveryPrice).text = viewState.data.delivery
+                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
                     cartListAdapter.updateData(viewState.data.basket)
                 }
-                is CartViewState.ErrorState -> {}
+                is CartViewState.ErrorState -> {
+                    view.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
+                    view.findViewById<TextView>(R.id.pageTitle).text = "Error: ${viewState.msg}"
+                }
             }
         }
 
