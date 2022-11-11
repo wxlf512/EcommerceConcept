@@ -334,7 +334,6 @@
                             android:paddingHorizontal="15dp"
                             android:paddingVertical="8dp"
                             android:background="@drawable/capacity_background"
-                            android:backgroundTint="@color/orange"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:textFontWeight="700"

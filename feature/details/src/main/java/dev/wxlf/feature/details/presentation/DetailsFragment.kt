@@ -191,6 +191,15 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             view?.findViewById<ImageView>(R.id.secondColor)?.setImageResource(R.drawable.checked)
         }
 
+        view?.findViewById<TextView>(R.id.firstCapacity)?.backgroundTintList =
+            ColorStateList.valueOf(
+                ResourcesCompat.getColor(
+                    resources,
+                    R.color.orange,
+                    null
+                )
+            )
+
         view?.findViewById<TextView>(R.id.firstCapacity)?.setOnClickListener {
             view?.findViewById<TextView>(R.id.firstCapacity)?.backgroundTintList =
                 ColorStateList.valueOf(
