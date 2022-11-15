@@ -3,7 +3,6 @@ package dev.wxlf.data.di
 import dagger.Component
 
 @Component(modules = [DataModule::class])
-@DataScope
 interface DataComponent {
 
     @Component.Builder
