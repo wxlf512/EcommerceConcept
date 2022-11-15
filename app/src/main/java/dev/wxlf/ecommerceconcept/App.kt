@@ -4,8 +4,6 @@ import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import dev.wxlf.data.di.DaggerDataComponent
-import dev.wxlf.data.di.DataComponent
 import dev.wxlf.ecommerceconcept.di.DaggerAppComponent
 import dev.wxlf.feature.cart.di.CartComponent
 import dev.wxlf.feature.cart.di.DaggerCartComponent
@@ -29,7 +27,6 @@ class App : Application(), HasAndroidInjector {
         val appComponent = DaggerAppComponent
             .builder()
             .application(this)
-            .dataComponent(provideDataComponent())
             .explorerComponent(provideExplorerComponent())
             .detailsComponent(provideDetailsComponent())
             .cartComponent(provideCartComponent())
@@ -38,11 +35,6 @@ class App : Application(), HasAndroidInjector {
         appComponent.inject(this)
 
     }
-
-    private fun provideDataComponent(): DataComponent =
-        DaggerDataComponent
-            .builder()
-            .build()
 
     private fun provideExplorerComponent(): ExplorerComponent =
         DaggerExplorerComponent
