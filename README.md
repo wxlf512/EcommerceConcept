@@ -1,6 +1,6 @@
 # Ecommerce Concept
 
-Тестовое задание для Effective Mobile
+Тестовое задание от компании Effective Mobile. Задачей было разработать приложение для магазина электроники по готовому дизайну с применением Adapter Delegates, Dagger2, многомодульности и архитектуры MVVM. Для работы с API я использовал Retrofit и Coroutines, для получения изображений Picasso.
 
 ### Cтек:
 - Kotlin
